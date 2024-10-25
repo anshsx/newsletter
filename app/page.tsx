@@ -1,7 +1,7 @@
 // Optional "use client" directive for client-side rendering
-if (typeof window !== 'undefined') {
+
   "use client";
-}
+
 
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';

@@ -166,7 +166,7 @@ export default function Component() {
         </nav>
       </div>
 
-      <main className="flex flex-col justify-center items-center px-10 md:px-20 lg:px-40 relative">
+      <main className=" flex-col justify-center items-center px-10 md:px-20 lg:px-40 relative">
         <div className={`w-full ${screens[currentScreen].buttonWidth || ''} ${screens[currentScreen].centerText ? 'text-center' : 'text-left'}`}>
           {screens[currentScreen].title && (
             <h2 className={`text-3xl md:text-2xl lg:text-3xl font-bold text-white`}>

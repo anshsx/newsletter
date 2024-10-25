@@ -224,7 +224,7 @@ export default function Component() {
         <footer className="flex flex-col items-center pb-12">
           <button className="flex items-center justify-center space-x-2 px-4 py-2.5 bg-[#404450] text-[#C9CDD9] rounded-lg border border-gray-300">
             <img
-  src="/era.png?height=50&width=200"
+  src={era}
   alt="Custom footer image"
   className="w-10 h-10"
 />

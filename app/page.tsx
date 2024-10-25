@@ -5,7 +5,7 @@ import { Menu, X } from 'lucide-react'
 import Link from 'next/link'
 
 // Import the CSS file where we define the font face
-import '../app/global.css'
+import '../app/globals.css'
 
 export default function Component() {
   const [currentScreen, setCurrentScreen] = useState(0)

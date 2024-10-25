@@ -30,7 +30,7 @@ export default function Component() {
     {
       text: (
         <>
-          At <span className="bg-[#4C7DF6] text-white px-1 py-1 rounded hover:bg-blue-500 transition-colors cursor-pointer">the Era Inc ,</span> we're building a better way to use the internet.
+          At <span className="bg-[#4C7DF6] text-white px-1 py-1 rounded hover:bg-blue-500 transition-colors cursor-pointer">the Era Inc ,</span> we&apos;re building a better way to use the internet.
         </>
       ),
       bgColor: 'bg-[#0D50FF]',
@@ -64,7 +64,7 @@ export default function Component() {
       fontWeight: 'font-normal'
     },
     {
-      text: <>That's why we're building a new browser, <span className="bg-[#4C7DF6] text-white px-1 py-1 rounded hover:bg-blue-500 transition-colors cursor-pointer underline">which we call Arc</span>, because we believe browsers can do so much more to empower us. We're imagining a browser that can think as quickly as we do, take work off of our plates, and pull our creativity forward. A browser equipped for the way we use the internet in 2024, and foundational for how we hope to use it in the future.</>,
+      text: <>That&apos;s why we&apos;re building a new browser, <span className="bg-[#4C7DF6] text-white px-1 py-1 rounded hover:bg-blue-500 transition-colors cursor-pointer underline">which we call Arc</span>, because we believe browsers can do so much more to empower us. We&apos;re imagining a browser that can think as quickly as we do, take work off of our plates, and pull our creativity forward. A browser equipped for the way we use the internet in 2024, and foundational for how we hope to use it in the future.</>,
       bgColor: 'bg-[#0D50FF]',
       textColor: 'text-[#e0ecff]',
       fontSize: 'text-lg md:text-xl lg:text-2xl',
@@ -73,7 +73,7 @@ export default function Component() {
     },
     {
       title: "Our Team",
-      text: <>We're a team of founders who sold their last company, ex-Instagram engineers, former Heads of Design at Tesla and Medium, multiple Google Chrome alums, alumni from Snap, Slack and Pinterest, and so many other people who have done it before. <span className="bg-[#4C7DF6] text-white px-1 py-1 rounded hover:bg-blue-500 transition-colors cursor-pointer underline">Work with us →</span></>,
+      text: <>We&apos;re a team of founders who sold their last company, ex-Instagram engineers, former Heads of Design at Tesla and Medium, multiple Google Chrome alums, alumni from Snap, Slack and Pinterest, and so many other people who have done it before. <span className="bg-[#4C7DF6] text-white px-1 py-1 rounded hover:bg-blue-500 transition-colors cursor-pointer underline">Work with us →</span></>,
       bgColor: 'bg-[#0D50FF]',
       textColor: 'text-[#e0ecff]',
       fontSize: 'text-lg md:text-xl lg:text-2xl',
@@ -82,7 +82,7 @@ export default function Component() {
     },
     {
       title: "Support",
-      text: <>Beyond our team, we're lucky to be supported by our family and friends, as well as investors who played a role in some of our favorite software companies over the years. We've raised over $17 million dollars from a diverse group that includes the founders of Instagram, Stripe, Twitter, Zoom, Figma, and LinkedIn. We're always grateful for new perspectives and shared learnings from experience. If you'd like to lend a hand, <span className="bg-[#4C7DF6] text-white px-1 py-1 rounded hover:bg-blue-500 transition-colors cursor-pointer underline">please send us a note</span>.</>,
+      text: <>Beyond our team, we&apos;re lucky to be supported by our family and friends, as well as investors who played a role in some of our favorite software companies over the years. We&apos;ve raised over $17 million dollars from a diverse group that includes the founders of Instagram, Stripe, Twitter, Zoom, Figma, and LinkedIn. We&apos;re always grateful for new perspectives and shared learnings from experience. If you&apos;d like to lend a hand, <span className="bg-[#4C7DF6] text-white px-1 py-1 rounded hover:bg-blue-500 transition-colors cursor-pointer underline">please send us a note</span>.</>,
       bgColor: 'bg-[#0D50FF]',
       textColor: 'text-[#e0ecff]',
       fontSize: 'text-lg md:text-xl lg:text-2xl',
@@ -90,7 +90,7 @@ export default function Component() {
       fontWeight: 'font-normal'
     },
     {
-      text: <>Otherwise, feel free to <span className="bg-[#4C7DF6] text-white px-1 py-1 rounded hover:bg-blue-500 transition-colors cursor-pointer underline">join our friends and family newsletter</span>, and we promise you'll be among the first to play with our new browser.</>,
+      text: <>Otherwise, feel free to <span className="bg-[#4C7DF6] text-white px-1 py-1 rounded hover:bg-blue-500 transition-colors cursor-pointer underline">join our friends and family newsletter</span>, and we promise you&apos;ll be among the first to play with our new browser.</>,
       bgColor: 'bg-[#0D50FF]',
       textColor: 'text-[#C9CDD9]',
       fontSize: 'text-lg md:text-xl lg:text-2xl',

@@ -1,7 +1,4 @@
-// Optional "use client" directive for client-side rendering
-
-  "use client";
-
+"use client";
 
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
@@ -152,7 +149,7 @@ export default function Component() {
   };
 
   return (
-    <div className={`min-h-screen flex flex-col transition-colors duration-500 ${screens[currentScreen]?.bgColor || ''} font-technica`}>
+    <div className={`h-screen w-full flex flex-col transition-colors duration-500 ${screens[currentScreen]?.bgColor || ''} font-technica`}>
       <header className="p-4 flex justify-end">
         <button 
           aria-label={menuOpen ? "Close menu" : "Open menu"} 
@@ -178,8 +175,8 @@ export default function Component() {
         </nav>
       </div>
 
-      <main className="flex-grow flex flex-col justify-center px-12 md:px-16 lg:px-24 relative">
-        <div className={`w-full ${screens[currentScreen].buttonWidth || ''} ${screens[currentScreen].centerText ? 'text-center mx-auto' : 'text-left'}`}>
+      <main className="flex-grow flex flex-col justify-center items-center px-4 md:px-8 lg:px-12 relative">
+        <div className={`w-full ${screens[currentScreen].buttonWidth || ''} ${screens[currentScreen].centerText ? 'text-center' : 'text-left'}`}>
           {screens[currentScreen].title && (
             <h2 className={`text-3xl md:text-2xl lg:text-3xl font-bold mb-4 text-white pb-4`}>
               {screens[currentScreen].title}
@@ -236,4 +233,4 @@ export default function Component() {
       )}
     </div>
   );
-                                                                              }
+      }

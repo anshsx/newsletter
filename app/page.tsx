@@ -141,7 +141,7 @@ export default function Component() {
 
   return (
     <div className={`h-screen w-full flex flex-col transition-colors duration-500 ${screens[currentScreen]?.bgColor || ''} font-technica`}>
-      <header className="p-4 flex justify-end">
+      <header className="flex justify-end">
         <button 
           aria-label={menuOpen ? "Close menu" : "Open menu"} 
           className={`${screens[currentScreen]?.textColor || 'text-white'} hover:opacity-80 z-50`}

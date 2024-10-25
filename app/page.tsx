@@ -1,318 +1,223 @@
 "use client"
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 
-import { useState, useRef, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronDown, Plus, Minus, Youtube } from 'lucide-react'
-import Image from 'next/image'
+import { useState } from 'react'
+import { Menu, X } from 'lucide-react'
 import Link from 'next/link'
-import logoe from '../logoe.jpeg'
-import cleanui from '../cleanui.jpg'
-import aibrowse from '../aibrowse.jpg'
-import google from '../google.jpg'
-import qr from '../qr.png'
 
-const features = [
-  { 
-    title: "GOOGLE SEARCH",
-    description: "Powered by Google Search Engine",
-    image: google
-  },
-  { 
-    title: "AI BROWSE",
-    description: "AI Search, A better answer for every question.",
-    image: aibrowse
-  },
-  { 
-    title: "CLEAN UI",
-    description: "Awww, So beautiful it is... Isn't it?",
-    image: cleanui
-  },
-]
-
-const faqs = [
-  {
-    question: "How do I install Era Search?",
-    answer: "Desktop: Scan the QR code with your Android, or download Era Search from the App Store. Mobile: Download Era Search directly from the Play Store or visit the Play Store on your Android to search for \"Era Search.\""
-  },
-  {
-    question: "What devices are supported?",
-    answer: "Currently, Era Search is available for Android devices. We're working on support for other platforms."
-  },
-  {
-    question: "How do I set Era Search as my default mobile browser?",
-    answer: "Currently you can't set it but in next update you will surely be able to set it as your default browser"
-  },
-  {
-    question: "How do I share feedback?",
-    answer: "You can share feedback by mailing us on erasearch.co@gmail.com"
-  },
-]
+// Import the CSS file where we define the font face
+import '../styles/fonts.css'
 
 export default function Component() {
-  const [currentFeature, setCurrentFeature] = useState(0)
-  const [openFaq, setOpenFaq] = useState<number | null>(null)
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [currentTime, setCurrentTime] = useState('')
-  const featureRef = useRef<HTMLDivElement>(null)
-  const headerRef = useRef<HTMLDivElement>(null)
+  const [currentScreen, setCurrentScreen] = useState(0)
+  const [menuOpen, setMenuOpen] = useState(false)
 
-  const scrollToContent = () => {
-    window.scrollTo({
-      top: window.innerHeight,
-      behavior: 'smooth'
-    })
+  const screens = [
+    {
+      text: (
+        <>
+          <span className="block">Could a browser keep us</span>
+          <span className="block">focused, organized and</span>
+          <span className="block">in control?</span>
+        </>
+      ),
+      bgColor: 'bg-[#131315]',
+      textColor: 'text-[#C9CDD9]',
+      fontSize: 'text-2xl md:text-xl lg:text-6xl',
+      showFooter: true,
+      centerText: true,
+      fontWeight: 'font-semibold'
+    },
+    {
+      text: (
+        <>
+          At <span className="bg-[#4C7DF6] text-white px-1 py-1 rounded hover:bg-blue-500 transition-colors cursor-pointer">the Era Inc ,</span> we're building a better way to use the internet.
+        </>
+      ),
+      bgColor: 'bg-[#0D50FF]',
+      textColor: 'text-white',
+      fontSize: 'text-2xl md:text-xl lg:text-2xl',
+      showFooter: true,
+      fontWeight: 'font-semibold'
+    },
+    {
+      text: "When we think about browsing the internet, we often ignore the browser itself. Instead, we think about all the things we do online—the articles we read, the emails we send, the shows we watch. The software that enables it all, the browser, is so ubiquitous that it's ignored.",
+      bgColor: 'bg-[#0D50FF]',
+      textColor: 'text-[#e0ecff]',
+      fontSize: 'text-lg md:text-xl lg:text-2xl',
+      showFooter: true,
+      fontWeight: 'font-normal'
+    },
+    {
+      text: "Despite the ways our internet use has evolved, the browser has remained relatively unchanged. While all of our other software tools are changing for the better—with more collaborative features, flexible interfaces, and powerful functionality—the browser largely still does what it did twenty-five years ago.",
+      bgColor: 'bg-[#0D50FF]',
+      textColor: 'text-[#e0ecff]',
+      fontSize: 'text-lg md:text-xl lg:text-2xl',
+      showFooter: true,
+      fontWeight: 'font-normal'
+    },
+    {
+      text: "What's more, we blame ourselves for the browser's shortcomings. When our browser has an overwhelming number of tabs, we call ourselves inefficient; when we get distracted online, we tell ourselves we need more discipline; when we can't find a url, we think we're disorganized. Why does the browser get a free pass?",
+      bgColor: 'bg-[#0D50FF]',
+      textColor: 'text-[#e0ecff]',
+      fontSize: 'text-lg md:text-xl lg:text-2xl',
+      showFooter: true,
+      fontWeight: 'font-normal'
+    },
+    {
+      text: <>That's why we're building a new browser, <span className="bg-[#4C7DF6] text-white px-1 py-1 rounded hover:bg-blue-500 transition-colors cursor-pointer underline">which we call Arc</span>, because we believe browsers can do so much more to empower us. We're imagining a browser that can think as quickly as we do, take work off of our plates, and pull our creativity forward. A browser equipped for the way we use the internet in 2024, and foundational for how we hope to use it in the future.</>,
+      bgColor: 'bg-[#0D50FF]',
+      textColor: 'text-[#e0ecff]',
+      fontSize: 'text-lg md:text-xl lg:text-2xl',
+      showFooter: true,
+      fontWeight: 'font-normal'
+    },
+    {
+      title: "Our Team",
+      text: <>We're a team of founders who sold their last company, ex-Instagram engineers, former Heads of Design at Tesla and Medium, multiple Google Chrome alums, alumni from Snap, Slack and Pinterest, and so many other people who have done it before. <span className="bg-[#4C7DF6] text-white px-1 py-1 rounded hover:bg-blue-500 transition-colors cursor-pointer underline">Work with us →</span></>,
+      bgColor: 'bg-[#0D50FF]',
+      textColor: 'text-[#e0ecff]',
+      fontSize: 'text-lg md:text-xl lg:text-2xl',
+      showFooter: true,
+      fontWeight: 'font-normal'
+    },
+    {
+      title: "Support",
+      text: <>Beyond our team, we're lucky to be supported by our family and friends, as well as investors who played a role in some of our favorite software companies over the years. We've raised over $17 million dollars from a diverse group that includes the founders of Instagram, Stripe, Twitter, Zoom, Figma, and LinkedIn. We're always grateful for new perspectives and shared learnings from experience. If you'd like to lend a hand, <span className="bg-[#4C7DF6] text-white px-1 py-1 rounded hover:bg-blue-500 transition-colors cursor-pointer underline">please send us a note</span>.</>,
+      bgColor: 'bg-[#0D50FF]',
+      textColor: 'text-[#e0ecff]',
+      fontSize: 'text-lg md:text-xl lg:text-2xl',
+      showFooter: true,
+      fontWeight: 'font-normal'
+    },
+    {
+      text: <>Otherwise, feel free to <span className="bg-[#4C7DF6] text-white px-1 py-1 rounded hover:bg-blue-500 transition-colors cursor-pointer underline">join our friends and family newsletter</span>, and we promise you'll be among the first to play with our new browser.</>,
+      bgColor: 'bg-[#0D50FF]',
+      textColor: 'text-[#C9CDD9]',
+      fontSize: 'text-lg md:text-xl lg:text-2xl',
+      showFooter: true,
+      fontWeight: 'font-normal',
+    },
+    {
+      image: true,
+      bgColor: 'bg-[#0D50FF]',
+      textColor: 'text-[#C9CDD9]'
+    },
+    {
+      text: (
+        <>
+          <Link href="/privacy" className="block underline mb-2">Privacy Policy</Link>
+          <Link href="/security" className="block underline mb-2">Security</Link>
+          <span className="block">Hi there :)</span>
+        </>
+      ),
+      bgColor: 'bg-[#131315]',
+      textColor: 'text-[#C9CDD9]',
+      fontSize: 'text-lg md:text-xl lg:text-2xl',
+      showFooter: false,
+      centerText: true,
+      fontWeight: 'font-normal'
+    },
+  ]
+
+  const nextScreen = () => {
+    if (currentScreen < screens.length - 1) {
+      setCurrentScreen(currentScreen + 1)
+    }
   }
 
-  const toggleFaq = (index: number) => {
-    setOpenFaq(openFaq === index ? null : index)
+  const prevScreen = () => {
+    if (currentScreen > 0) {
+      setCurrentScreen(currentScreen - 1)
+    }
   }
-
-  const handleScroll = () => {
-    const scrollPosition = window.scrollY
-    setIsScrolled(scrollPosition > 50)
-  }
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  useEffect(() => {
-    const updateTime = () => {
-      const now = new Date()
-      setCurrentTime(now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false }))
-    }
-    updateTime()
-    const timer = setInterval(updateTime, 1000)
-    return () => clearInterval(timer)
-  }, [])
-
-  useEffect(() => {
-    const handleFeatureScroll = () => {
-      if (featureRef.current) {
-        const scrollContainer = featureRef.current
-        const scrollLeft = scrollContainer.scrollLeft
-        const containerWidth = scrollContainer.offsetWidth
-        const featureWidth = containerWidth / features.length
-        const newIndex = Math.round(scrollLeft / featureWidth)
-        setCurrentFeature(newIndex)
-      }
-    }
-
-    const featureContainer = featureRef.current
-    if (featureContainer) {
-      featureContainer.addEventListener('scroll', handleFeatureScroll)
-      return () => featureContainer.removeEventListener('scroll', handleFeatureScroll)
-    }
-  }, [])
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-pink-20 to-white text-gray-900">
-      <div ref={headerRef} className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-gradient-to-b from-white via-white to-transparent h-24' : ''}`}>
-        <div className={`container mx-auto px-4 py-6 flex justify-between items-center ${isScrolled ? 'bg-white' : ''} relative z-10`}>
-          <div className="text-2xl font-bold">Era Search</div>
-          <Link href="https://play.google.com/store/apps/details?id=com.erainc.era" target="_blank"passHref><button className="px-6 py-2 rounded-full font-semibold transition-colors bg-black text-white hover:bg-black">
-            Download
-          </button></Link>
-        </div>
-      </div>
-
-      <div className="container mx-auto px-4 min-h-screen flex flex-col justify-center items-center text-center pt-20">
-        <motion.h1 
-          className="text-4xl sm:text-5xl md:text-7xl font-bold mb-8 relative z-10"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+    <div className={`min-h-screen flex flex-col transition-colors duration-500 ${screens[currentScreen].bgColor} font-technica`}>
+      {/* Header */}
+      <header className="p-4 flex justify-end">
+        <button 
+          aria-label={menuOpen ? "Close menu" : "Open menu"} 
+          className={`${screens[currentScreen].textColor} hover:opacity-80 z-50`}
+          onClick={() => setMenuOpen(!menuOpen)}
         >
-          <motion.span
-            animate={{
-              backgroundImage: [
-                'linear-gradient(45deg, #07C9E5, #0E7DF0)',
-                'linear-gradient(45deg, #9499ED, #A164D9)',
-                'linear-gradient(45deg, #FE6FFF, #FF3C8B)',
-                'linear-gradient(45deg, #DE7F9D, #F0532A)',
-                'linear-gradient(45deg, #DE7F9D, #F0532A)',
-              ],
-              transition: {
-                duration: 10,
-                ease: 'linear',
-                repeat: Infinity,
-                repeatType: 'reverse' 
-              }
-            }}
-            style={{ backgroundClip: 'text', WebkitBackgroundClip: 'text', color: 'transparent' }}
-          >
-            &quot;Browse Boldly , <span className="troll-wisely">Troll Wisely</span>&quot;<br />~ Era Search
-
-          </motion.span>
-        </motion.h1>
-        <Link href="https://play.google.com/store/apps/details?id=com.erainc.era"target="_blank"passHref><motion.button 
-          className="px-8 py-4 rounded-full text-xl font-semibold bg-gray-900 text-white hover:bg-gray-800 transition-colors relative z-10"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.5 }}
-        >
-          Download Now →
-        </motion.button></Link>
-        <motion.div 
-          className="mt-20 cursor-pointer relative z-10 group"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.9, duration: 0.5 }}
-          onClick={scrollToContent}
-        >
-          <span className="text-gray-600 group-hover:text-gray-800 transition-colors">Start Exploring</span>
-          <ChevronDown className="mx-auto mt-2 text-gray-400 group-hover:text-gray-600 transition-colors" />
-        </motion.div>
-      </div>
-
-      <div className="container mx-auto px-4 py-20">
-        <div className="mb-20 text-center">
-          <Image
-            src={logoe}
-            alt="Era Search Logo"
-            width={100}
-            height={100}
-            className="mx-auto mb-6"
-          />
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-pink-500 to-purple-500 text-transparent bg-clip-text">
-              Era Search
-            </span>
-          </h2>
-          <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">
-            browser that browses <span className="italic">for you</span>
-          </p>
-        </div>
-
-        <div className="bg-pink-50 p-8 sm:p-10 rounded-3xl max-w-4xl mx-auto mb-20 border border-pink-100">
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-8 text-center">
-            {features[currentFeature].description}
-          </h2>
-          
-          <div 
-      ref={featureRef}
-      className="overflow-x-auto scrollbar-hide whitespace-nowrap scroll-smooth mb-8 flex justify-center" // Flexbox for centering
-    >
-      {features.map((feature, index) => (
-        <button
-          key={index}
-          onClick={() => setCurrentFeature(index)} // Update state on click
-          className={`inline-block text-center px-4 py-2 mx-2 rounded-full text-sm font-medium transition-colors ${
-            currentFeature === index
-              ? 'bg-gray-900 text-white' // Active styling
-              : 'bg-white text-gray-800 hover:bg-gray-100' // Inactive styling
-          }`}
-        >
-          {feature.title}
+          {menuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
-      ))}
-    </div>
+      </header>
 
-          <div className="bg-white rounded-3xl p-4 max-w-xs mx-auto mt-8 border border-gray-300">
-            <div className="flex items-center justify-between mb-2 text-xs text-gray-500">
-              <div>{currentTime}</div>
-              <div className="flex items-center space-x-1">
-                <div className="w-4 h-4 bg-green-400 rounded-full"></div>
-                <div className="w-4 h-4 bg-yellow-400 rounded-full"></div>
-                <div className="w-4 h-4 bg-red-400 rounded-full"></div>
-              </div>
-            </div>
-            <div className="relative">
-              <Image
-                src={features[currentFeature].image}
-                alt={features[currentFeature].title}
-                width={400}
-                height={800}
-                className="rounded-2xl"
-              />
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-20">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-12 text-center text-gray-800">Frequently Asked Questions</h2>
-          <div className="space-y-6 max-w-2xl mx-auto bg-white rounded-3xl p-8 border border-gray-200">
-            {faqs.map((faq, index) => (
-              <div key={index} className="border-b border-gray-200 last:border-b-0 pb-6 last:pb-0">
-                <button
-                  className="flex justify-between items-center w-full text-left"
-                  onClick={() => toggleFaq(index)}
-                >
-                  <span className="text-lg sm:text-xl font-semibold text-gray-800">{faq.question}</span>
-                  {openFaq === index ? (
-                    <Minus className="text-gray-600 w-6 h-6 flex-shrink-0" />
-                  ) : (
-                    <Plus className="text-gray-600 w-6 h-6 flex-shrink-0" />
-                  )}
-                </button>
-                <AnimatePresence>
-                  {openFaq === index && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="overflow-hidden"
-                    >
-                      <p className="mt-4 text-gray-600">{faq.answer}</p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="mt-20 p-8 sm:p-10 rounded-3xl">
-          <div className="text-center">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-gray-800">Scan this QR code with your phone</h2>
-            <p className="text-lg sm:text-xl mb-10 text-gray-600">to download Era Search from Play Store.</p>
-            <div className="inline-block">
-              <Image
-                src={qr}
-                alt="QR Code"
-                width={200}
-                height={200}
-              />
-            </div>
-            <p className="mt-10 text-xl font-semibold text-gray-800">WE&apos;RE WORKING FOR iPHONE, TOO!
-</p>
-            <a href="https://era-nine.vercel.app/iphone.html" className="mt-4 inline-block text-blue-600 hover:text-blue-800 transition-colors font-medium">JOIN THE IPHONE WAITING LIST →</a>
-          </div>
-        </div>
+      {/* Menu Overlay */}
+      <div className={`fixed inset-0 bg-[#0D50FF] z-40 flex items-center justify-center transition-opacity duration-300 ${menuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+        <nav className="text-center">
+          {['VALUES', 'CONTACT', 'CAREERS', 'TWITTER', 'NEWSLETTER', 'GET ARC'].map((item, index) => (
+            <Link 
+              key={index} 
+              href="#" 
+              className={`block py-2 text-lg md:text-xl lg:text-2xl ${item === 'GET ARC' ? 'text-white' : 'text-gray-300'} hover:text-white transition-colors`}
+              onClick={() => setMenuOpen(false)}
+            >
+              {item}
+            </Link>
+          ))}
+        </nav>
       </div>
 
-      <footer className="bg-black text-white py-16 mt-20">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div>
-              <h3 className="text-2xl font-bold mb-6">EXPLORE ERA</h3>
-              <ul className="space-y-4">
-                <li><a href="https://play.google.com/store/apps/details?id=com.erainc.era" className="hover:text-gray-300 transition-colors">📩 Download</a></li>
-                <li><a href="https://era-nine.vercel.app/cheat.html" className="hover:text-gray-300 transition-colors">📃 Cheat Sheet</a></li>
-                <li><a href="https://era-nine.vercel.app/policy.html" className="hover:text-gray-300 transition-colors">🕵️ Privacy Policy</a></li>
-                <li><a href="https://era-nine.vercel.app/about.html" className="hover:text-gray-300 transition-colors">🧖 About Me</a></li>
-                <li><a href="https://era-nine.vercel.app/" className="hover:text-gray-300 transition-colors">😌 Other Small Projects (No Ads)</a></li>
-              </ul>
+      {/* Main content */}
+      <main className="flex-grow flex flex-col justify-center px-12 md:px-16 lg:px-24 relative">
+        <div className={`w-full ${screens[currentScreen].buttonWidth} ${screens[currentScreen].centerText ? 'text-center mx-auto' : 'text-left'}`}>
+          {screens[currentScreen].title && (
+            <h2 className={`text-3xl md:text-2xl lg:text-3xl font-bold mb-4 text-white pb-4`}>
+              {screens[currentScreen].title}
+            </h2>
+          )}
+          {screens[currentScreen].image ? (
+            <div className="flex justify-center items-center h-full">
+              <img
+                src="/placeholder.svg?height=300&width=300"
+                alt="Placeholder image"
+                className="max-w-full max-h-full"
+              />
             </div>
-            
-          </div>
-          <div className="mt-12 flex flex-col md:flex-row justify-between items-center">
-            <div className="flex space-x-6 mb-6 md:mb-0">
-              <a href="https://youtube.com/@era.search" className="hover:text-gray-300 transition-colors">
-                <Youtube size={28} />
-              </a>
-              
+          ) : (
+            <div className={`${screens[currentScreen].fontSize} ${screens[currentScreen].textColor} ${screens[currentScreen].fontWeight} leading-relaxed`}>
+              {screens[currentScreen].text}
             </div>
-            <div className="text-sm text-gray-400">
-              ERA Inc. (Inspired by &quot;The Browser Company&quot;)
-
-            </div>
-          </div>
+          )}
         </div>
-      </footer>
+
+        {/* Navigation arrows */}
+        <div className="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2">
+          {currentScreen > 0 && (
+            <button onClick={prevScreen} aria-label="Previous" className="text-white opacity-50 hover:opacity-100 transition-opacity">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.41 7.41L14 6L8 12L14 18L15.41 16.59L10.83 12L15.41 7.41Z" fill="currentColor"/>
+              </svg>
+            </button>
+          )}
+        </div>
+        <div className="absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2">
+          {currentScreen < screens.length - 1 && (
+            <button onClick={nextScreen} aria-label="Next" className="text-white opacity-50 hover:opacity-100 transition-opacity">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.59 16.59L10 18L16 12L10 6L8.59 7.41L13.17 12L8.59 16.59Z" fill="currentColor"/>
+              </svg>
+            </button>
+          )}
+        </div>
+      </main>
+
+      {/* Footer */}
+      {screens[currentScreen].showFooter && (
+        <footer className={`flex flex-col items-center ${screens[currentScreen].isOtherwiseScreen ? 'pb-12' : 'pb-12'}`}>
+          {/* Custom button */}
+          <button className={`flex items-center justify-center space-x-2 px-4 py-2.5 bg-[#404450] text-[#C9CDD9] rounded-lg border border-gray-300 ${screens[currentScreen].isOtherwiseScreen ? 'w-full max-w-4xl mx-auto' : screens[currentScreen].buttonWidth || ''}`}>
+            <img
+              src="/placeholder.svg?height=50&width=200"
+              alt="Custom footer image"
+              className="w-10 h-10"
+            />
+            <span>Get Era  -></span>
+          </button>
+        </footer>
+      )}
     </div>
   )
-}
+      }

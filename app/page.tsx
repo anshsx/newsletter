@@ -1,22 +1,25 @@
-"use client"
+// Optional "use client" directive for client-side rendering
+if (typeof window !== 'undefined') {
+  "use client";
+}
 
-import { useState } from 'react'
-import { Menu, X } from 'lucide-react'
-import Link from 'next/link'
+import { useState } from 'react';
+import { Menu, X } from 'lucide-react';
+import Link from 'next/link';
 
-// Import the CSS file where we define the font face
-import '../app/globals.css'
+// Import CSS for fonts and global styles
+import '../app/globals.css';
 
 export default function Component() {
-  const [currentScreen, setCurrentScreen] = useState(0)
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [currentScreen, setCurrentScreen] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const screens = [
     {
       text: (
         <>
           <span className="block">Could a browser keep us</span>
-          <span className="block">focused, organized and</span>
+          <span className="block">focused, organized, and</span>
           <span className="block">in control?</span>
         </>
       ),
@@ -25,7 +28,8 @@ export default function Component() {
       fontSize: 'text-2xl md:text-xl lg:text-6xl',
       showFooter: true,
       centerText: true,
-      fontWeight: 'font-semibold'
+      fontWeight: 'font-semibold',
+      buttonWidth: 'w-full max-w-md',
     },
     {
       text: (
@@ -37,7 +41,7 @@ export default function Component() {
       textColor: 'text-white',
       fontSize: 'text-2xl md:text-xl lg:text-2xl',
       showFooter: true,
-      fontWeight: 'font-semibold'
+      fontWeight: 'font-semibold',
     },
     {
       text: "When we think about browsing the internet, we often ignore the browser itself. Instead, we think about all the things we do online—the articles we read, the emails we send, the shows we watch. The software that enables it all, the browser, is so ubiquitous that it's ignored.",
@@ -45,7 +49,7 @@ export default function Component() {
       textColor: 'text-[#e0ecff]',
       fontSize: 'text-lg md:text-xl lg:text-2xl',
       showFooter: true,
-      fontWeight: 'font-normal'
+      fontWeight: 'font-normal',
     },
     {
       text: "Despite the ways our internet use has evolved, the browser has remained relatively unchanged. While all of our other software tools are changing for the better—with more collaborative features, flexible interfaces, and powerful functionality—the browser largely still does what it did twenty-five years ago.",
@@ -53,44 +57,60 @@ export default function Component() {
       textColor: 'text-[#e0ecff]',
       fontSize: 'text-lg md:text-xl lg:text-2xl',
       showFooter: true,
-      fontWeight: 'font-normal'
+      fontWeight: 'font-normal',
     },
     {
-      text: "What's more, we blame ourselves for the browser's shortcomings. When our browser has an overwhelming number of tabs, we call ourselves inefficient; when we get distracted online, we tell ourselves we need more discipline; when we can't find a url, we think we're disorganized. Why does the browser get a free pass?",
+      text: "What's more, we blame ourselves for the browser's shortcomings. When our browser has an overwhelming number of tabs, we call ourselves inefficient; when we get distracted online, we tell ourselves we need more discipline; when we can't find a URL, we think we're disorganized. Why does the browser get a free pass?",
       bgColor: 'bg-[#0D50FF]',
       textColor: 'text-[#e0ecff]',
       fontSize: 'text-lg md:text-xl lg:text-2xl',
       showFooter: true,
-      fontWeight: 'font-normal'
+      fontWeight: 'font-normal',
     },
     {
-      text: <>That&apos;s why we&apos;re building a new browser, <span className="bg-[#4C7DF6] text-white px-1 py-1 rounded hover:bg-blue-500 transition-colors cursor-pointer underline">which we call Arc</span>, because we believe browsers can do so much more to empower us. We&apos;re imagining a browser that can think as quickly as we do, take work off of our plates, and pull our creativity forward. A browser equipped for the way we use the internet in 2024, and foundational for how we hope to use it in the future.</>,
+      text: (
+        <>
+          That&apos;s why we&apos;re building a new browser, <span className="bg-[#4C7DF6] text-white px-1 py-1 rounded hover:bg-blue-500 transition-colors cursor-pointer underline">which we call Arc</span>, because we believe browsers can do so much more to empower us. We&apos;re imagining a browser that can think as quickly as we do, take work off of our plates, and pull our creativity forward. A browser equipped for the way we use the internet in 2024, and foundational for how we hope to use it in the future.
+        </>
+      ),
       bgColor: 'bg-[#0D50FF]',
       textColor: 'text-[#e0ecff]',
       fontSize: 'text-lg md:text-xl lg:text-2xl',
       showFooter: true,
-      fontWeight: 'font-normal'
+      fontWeight: 'font-normal',
     },
     {
       title: "Our Team",
-      text: <>We&apos;re a team of founders who sold their last company, ex-Instagram engineers, former Heads of Design at Tesla and Medium, multiple Google Chrome alums, alumni from Snap, Slack and Pinterest, and so many other people who have done it before. <span className="bg-[#4C7DF6] text-white px-1 py-1 rounded hover:bg-blue-500 transition-colors cursor-pointer underline">Work with us →</span></>,
+      text: (
+        <>
+          We&apos;re a team of founders who sold their last company, ex-Instagram engineers, former Heads of Design at Tesla and Medium, multiple Google Chrome alums, alumni from Snap, Slack, and Pinterest, and so many other people who have done it before. <span className="bg-[#4C7DF6] text-white px-1 py-1 rounded hover:bg-blue-500 transition-colors cursor-pointer underline">Work with us →</span>
+        </>
+      ),
       bgColor: 'bg-[#0D50FF]',
       textColor: 'text-[#e0ecff]',
       fontSize: 'text-lg md:text-xl lg:text-2xl',
       showFooter: true,
-      fontWeight: 'font-normal'
+      fontWeight: 'font-normal',
     },
     {
       title: "Support",
-      text: <>Beyond our team, we&apos;re lucky to be supported by our family and friends, as well as investors who played a role in some of our favorite software companies over the years. We&apos;ve raised over $17 million dollars from a diverse group that includes the founders of Instagram, Stripe, Twitter, Zoom, Figma, and LinkedIn. We&apos;re always grateful for new perspectives and shared learnings from experience. If you&apos;d like to lend a hand, <span className="bg-[#4C7DF6] text-white px-1 py-1 rounded hover:bg-blue-500 transition-colors cursor-pointer underline">please send us a note</span>.</>,
+      text: (
+        <>
+          Beyond our team, we&apos;re lucky to be supported by our family and friends, as well as investors who played a role in some of our favorite software companies over the years. We&apos;ve raised over $17 million dollars from a diverse group that includes the founders of Instagram, Stripe, Twitter, Zoom, Figma, and LinkedIn. We&apos;re always grateful for new perspectives and shared learnings from experience. If you&apos;d like to lend a hand, <span className="bg-[#4C7DF6] text-white px-1 py-1 rounded hover:bg-blue-500 transition-colors cursor-pointer underline">please send us a note</span>.
+        </>
+      ),
       bgColor: 'bg-[#0D50FF]',
       textColor: 'text-[#e0ecff]',
       fontSize: 'text-lg md:text-xl lg:text-2xl',
       showFooter: true,
-      fontWeight: 'font-normal'
+      fontWeight: 'font-normal',
     },
     {
-      text: <>Otherwise, feel free to <span className="bg-[#4C7DF6] text-white px-1 py-1 rounded hover:bg-blue-500 transition-colors cursor-pointer underline">join our friends and family newsletter</span>, and we promise you&apos;ll be among the first to play with our new browser.</>,
+      text: (
+        <>
+          Otherwise, feel free to <span className="bg-[#4C7DF6] text-white px-1 py-1 rounded hover:bg-blue-500 transition-colors cursor-pointer underline">join our friends and family newsletter</span>, and we promise you&apos;ll be among the first to play with our new browser.
+        </>
+      ),
       bgColor: 'bg-[#0D50FF]',
       textColor: 'text-[#C9CDD9]',
       fontSize: 'text-lg md:text-xl lg:text-2xl',
@@ -100,7 +120,7 @@ export default function Component() {
     {
       image: true,
       bgColor: 'bg-[#0D50FF]',
-      textColor: 'text-[#C9CDD9]'
+      textColor: 'text-[#C9CDD9]',
     },
     {
       text: (
@@ -115,36 +135,34 @@ export default function Component() {
       fontSize: 'text-lg md:text-xl lg:text-2xl',
       showFooter: false,
       centerText: true,
-      fontWeight: 'font-normal'
+      fontWeight: 'font-normal',
     },
-  ]
+  ];
 
   const nextScreen = () => {
     if (currentScreen < screens.length - 1) {
-      setCurrentScreen(currentScreen + 1)
+      setCurrentScreen(currentScreen + 1);
     }
-  }
+  };
 
   const prevScreen = () => {
     if (currentScreen > 0) {
-      setCurrentScreen(currentScreen - 1)
+      setCurrentScreen(currentScreen - 1);
     }
-  }
+  };
 
   return (
-    <div className={`min-h-screen flex flex-col transition-colors duration-500 ${screens[currentScreen].bgColor} font-technica`}>
-      {/* Header */}
+    <div className={`min-h-screen flex flex-col transition-colors duration-500 ${screens[currentScreen]?.bgColor || ''} font-technica`}>
       <header className="p-4 flex justify-end">
         <button 
           aria-label={menuOpen ? "Close menu" : "Open menu"} 
-          className={`${screens[currentScreen].textColor} hover:opacity-80 z-50`}
+          className={`${screens[currentScreen]?.textColor || 'text-white'} hover:opacity-80 z-50`}
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </header>
 
-      {/* Menu Overlay */}
       <div className={`fixed inset-0 bg-[#0D50FF] z-40 flex items-center justify-center transition-opacity duration-300 ${menuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
         <nav className="text-center">
           {['VALUES', 'CONTACT', 'CAREERS', 'TWITTER', 'NEWSLETTER', 'GET ARC'].map((item, index) => (
@@ -160,9 +178,8 @@ export default function Component() {
         </nav>
       </div>
 
-      {/* Main content */}
       <main className="flex-grow flex flex-col justify-center px-12 md:px-16 lg:px-24 relative">
-        <div className={`w-full ${screens[currentScreen].buttonWidth} ${screens[currentScreen].centerText ? 'text-center mx-auto' : 'text-left'}`}>
+        <div className={`w-full ${screens[currentScreen].buttonWidth || ''} ${screens[currentScreen].centerText ? 'text-center mx-auto' : 'text-left'}`}>
           {screens[currentScreen].title && (
             <h2 className={`text-3xl md:text-2xl lg:text-3xl font-bold mb-4 text-white pb-4`}>
               {screens[currentScreen].title}
@@ -206,18 +223,17 @@ export default function Component() {
 
       {/* Footer */}
       {screens[currentScreen].showFooter && (
-        <footer className={`flex flex-col items-center ${screens[currentScreen].isOtherwiseScreen ? 'pb-12' : 'pb-12'}`}>
-          {/* Custom button */}
-          <button className={`flex items-center justify-center space-x-2 px-4 py-2.5 bg-[#404450] text-[#C9CDD9] rounded-lg border border-gray-300 ${screens[currentScreen].isOtherwiseScreen ? 'w-full max-w-4xl mx-auto' : screens[currentScreen].buttonWidth || ''}`}>
+        <footer className="flex flex-col items-center pb-12">
+          <button className="flex items-center justify-center space-x-2 px-4 py-2.5 bg-[#404450] text-[#C9CDD9] rounded-lg border border-gray-300">
             <img
               src="/placeholder.svg?height=50&width=200"
               alt="Custom footer image"
               className="w-10 h-10"
             />
-            <span>Get Era  -&gt;</span>
+            <span>Get Era -&gt;</span>
           </button>
         </footer>
       )}
     </div>
-  )
-      }
+  );
+                                                                              }

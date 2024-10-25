@@ -166,7 +166,7 @@ export default function Component() {
         </nav>
       </div>
 
-      <main className="flex-grow flex flex-col justify-center items-center px-4 md:px-8 lg:px-12 relative">
+      <main className="flex-grow flex flex-col justify-center items-center px-10 md:px-20 lg:px-40 relative">
         <div className={`w-full ${screens[currentScreen].buttonWidth || ''} ${screens[currentScreen].centerText ? 'text-center' : 'text-left'}`}>
           {screens[currentScreen].title && (
             <h2 className={`text-3xl md:text-2xl lg:text-3xl font-bold mb-4 text-white pb-4`}>
@@ -191,7 +191,7 @@ export default function Component() {
         </div>
 
         {/* Navigation arrows */}
-        <div className="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2">
+        <div className="absolute left-1 md:left-4 top-1/2 transform -translate-y-1/2">
           {currentScreen > 0 && (
             <button onClick={prevScreen} aria-label="Previous" className="text-white opacity-50 hover:opacity-100 transition-opacity">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -200,7 +200,7 @@ export default function Component() {
             </button>
           )}
         </div>
-        <div className="absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2">
+        <div className="absolute right-1 md:right-4 top-1/2 transform -translate-y-1/2">
           {currentScreen < screens.length - 1 && (
             <button onClick={nextScreen} aria-label="Next" className="text-white opacity-50 hover:opacity-100 transition-opacity">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

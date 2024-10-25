@@ -140,7 +140,7 @@ export default function Component() {
   };
 
   return (
-    <div className={`h-screen w-full flex flex-col transition-colors duration-500 ${screens[currentScreen]?.bgColor || ''} font-technica`}>
+    <div className={`p-4 h-screen w-full flex flex-col transition-colors duration-500 ${screens[currentScreen]?.bgColor || ''} font-technica`}>
       <header className="flex justify-end">
         <button 
           aria-label={menuOpen ? "Close menu" : "Open menu"} 

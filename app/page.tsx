@@ -140,8 +140,8 @@ export default function Component() {
   };
 
   return (
-    <div className={`p-4 h-screen w-full flex flex-col transition-colors duration-500 ${screens[currentScreen]?.bgColor || ''} font-technica`}>
-      <header className="flex justify-end">
+    <div className={`h-screen w-full flex flex-col transition-colors duration-500 ${screens[currentScreen]?.bgColor || ''} font-technica`}>
+      <header className="p-4 flex justify-end">
         <button 
           aria-label={menuOpen ? "Close menu" : "Open menu"} 
           className={`${screens[currentScreen]?.textColor || 'text-white'} hover:opacity-80 z-50`}
@@ -166,10 +166,10 @@ export default function Component() {
         </nav>
       </div>
 
-      <main className="flex-grow flex-col justify-center items-center px-10 md:px-20 lg:px-40 relative">
+      <main className="flex-grow flex flex-col justify-center items-center px-10 md:px-20 lg:px-40 relative">
         <div className={`w-full ${screens[currentScreen].buttonWidth || ''} ${screens[currentScreen].centerText ? 'text-center' : 'text-left'}`}>
           {screens[currentScreen].title && (
-            <h2 className={`text-3xl md:text-2xl lg:text-3xl font-bold text-white`}>
+            <h2 className={`text-3xl md:text-2xl lg:text-3xl font-bold mb-4 text-white pb-4`}>
               {screens[currentScreen].title}
             </h2>
           )}
@@ -212,4 +212,4 @@ export default function Component() {
       </main>
     </div>
   );
-}
+        }

@@ -226,7 +226,7 @@ export default function Component() {
             <Image
       src={era} // No need to use era.src
       alt="Custom footer image"
-      width={200} // Set the desired width
+      width={50} // Set the desired width
       height={50} // Set the desired height
       className="w-10 h-10"
     />

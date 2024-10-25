@@ -31,7 +31,7 @@ export default function Component() {
     {
       text: (
         <>
-          At <span className="bg-[#4C7DF6] text-white px-1 py-1 rounded hover:bg-blue-500 transition-colors cursor-pointer">the Era Inc ,</span> we&apos;re building a better way to use the internet.
+          At <span className="bg-[#4C7DF6] text-white px-1 py-1 rounded hover:bg-blue-500 transition-colors cursor-pointer">the Era Inc,</span> we&apos;re building a better way to use the internet.
         </>
       ),
       bgColor: 'bg-[#0D50FF]',
@@ -233,4 +233,4 @@ export default function Component() {
       )}
     </div>
   );
-      }
+}

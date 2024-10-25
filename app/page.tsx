@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
-import era from '../era.png';
 import Image from 'next/image';
 import company from '../company.png';
 // Import CSS for fonts and global styles
@@ -25,7 +24,7 @@ export default function Component() {
       bgColor: 'bg-[#131315]',
       textColor: 'text-[#C9CDD9]',
       fontSize: 'text-2xl md:text-xl lg:text-6xl',
-      showFooter: true,
+      
       centerText: true,
       fontWeight: 'font-semibold',
       buttonWidth: 'w-full max-w-md',
@@ -39,7 +38,7 @@ export default function Component() {
       bgColor: 'bg-[#0D50FF]',
       textColor: 'text-white',
       fontSize: 'text-2xl md:text-xl lg:text-2xl',
-      showFooter: true,
+      
       fontWeight: 'font-semibold',
     },
     {
@@ -47,7 +46,7 @@ export default function Component() {
       bgColor: 'bg-[#0D50FF]',
       textColor: 'text-[#e0ecff]',
       fontSize: 'text-lg md:text-xl lg:text-2xl',
-      showFooter: true,
+      
       fontWeight: 'font-normal',
     },
     {
@@ -55,7 +54,7 @@ export default function Component() {
       bgColor: 'bg-[#0D50FF]',
       textColor: 'text-[#e0ecff]',
       fontSize: 'text-lg md:text-xl lg:text-2xl',
-      showFooter: true,
+      
       fontWeight: 'font-normal',
     },
     {
@@ -63,7 +62,7 @@ export default function Component() {
       bgColor: 'bg-[#0D50FF]',
       textColor: 'text-[#e0ecff]',
       fontSize: 'text-lg md:text-xl lg:text-2xl',
-      showFooter: true,
+     
       fontWeight: 'font-normal',
     },
     {
@@ -75,7 +74,7 @@ export default function Component() {
       bgColor: 'bg-[#0D50FF]',
       textColor: 'text-[#e0ecff]',
       fontSize: 'text-lg md:text-xl lg:text-2xl',
-      showFooter: true,
+      
       fontWeight: 'font-normal',
     },
     {
@@ -88,7 +87,7 @@ export default function Component() {
       bgColor: 'bg-[#0D50FF]',
       textColor: 'text-[#e0ecff]',
       fontSize: 'text-lg md:text-xl lg:text-2xl',
-      showFooter: true,
+      
       fontWeight: 'font-normal',
     },
     {
@@ -101,7 +100,7 @@ export default function Component() {
       bgColor: 'bg-[#0D50FF]',
       textColor: 'text-[#e0ecff]',
       fontSize: 'text-lg md:text-xl lg:text-2xl',
-      showFooter: true,
+      
       fontWeight: 'font-normal',
     },
     {
@@ -113,7 +112,7 @@ export default function Component() {
       bgColor: 'bg-[#0D50FF]',
       textColor: 'text-[#C9CDD9]',
       fontSize: 'text-lg md:text-xl lg:text-2xl',
-      showFooter: true,
+      
       fontWeight: 'font-normal',
     },
     {
@@ -132,7 +131,6 @@ export default function Component() {
       bgColor: 'bg-[#131315]',
       textColor: 'text-[#C9CDD9]',
       fontSize: 'text-lg md:text-xl lg:text-2xl',
-      showFooter: false,
       centerText: true,
       fontWeight: 'font-normal',
     },
@@ -222,21 +220,7 @@ export default function Component() {
         </div>
       </main>
 
-      {/* Footer */}
-      {screens[currentScreen].showFooter && (
-        <footer className="flex flex-col items-center pb-12">
-          <button className="flex items-center justify-center space-x-2 px-4 py-2.5 bg-[#404450] text-[#C9CDD9] rounded-lg border border-gray-300">
-            <Image
-      src={era} // No need to use era.src
-      alt="Custom footer image"
-      width={50} // Set the desired width
-      height={50} // Set the desired height
-      className="w-10 h-10"
-    />
-            <span>Get Era -&gt;</span>
-          </button>
-        </footer>
-      )}
+      
     </div>
   );
 }

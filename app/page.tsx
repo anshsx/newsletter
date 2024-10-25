@@ -24,7 +24,6 @@ export default function Component() {
       bgColor: 'bg-[#131315]',
       textColor: 'text-[#C9CDD9]',
       fontSize: 'text-2xl md:text-xl lg:text-6xl',
-      
       centerText: true,
       fontWeight: 'font-semibold',
       buttonWidth: 'w-full max-w-md',
@@ -38,7 +37,6 @@ export default function Component() {
       bgColor: 'bg-[#0D50FF]',
       textColor: 'text-white',
       fontSize: 'text-2xl md:text-xl lg:text-2xl',
-      
       fontWeight: 'font-semibold',
     },
     {
@@ -46,7 +44,6 @@ export default function Component() {
       bgColor: 'bg-[#0D50FF]',
       textColor: 'text-[#e0ecff]',
       fontSize: 'text-lg md:text-xl lg:text-2xl',
-      
       fontWeight: 'font-normal',
     },
     {
@@ -54,7 +51,6 @@ export default function Component() {
       bgColor: 'bg-[#0D50FF]',
       textColor: 'text-[#e0ecff]',
       fontSize: 'text-lg md:text-xl lg:text-2xl',
-      
       fontWeight: 'font-normal',
     },
     {
@@ -62,7 +58,6 @@ export default function Component() {
       bgColor: 'bg-[#0D50FF]',
       textColor: 'text-[#e0ecff]',
       fontSize: 'text-lg md:text-xl lg:text-2xl',
-     
       fontWeight: 'font-normal',
     },
     {
@@ -74,7 +69,6 @@ export default function Component() {
       bgColor: 'bg-[#0D50FF]',
       textColor: 'text-[#e0ecff]',
       fontSize: 'text-lg md:text-xl lg:text-2xl',
-      
       fontWeight: 'font-normal',
     },
     {
@@ -87,7 +81,6 @@ export default function Component() {
       bgColor: 'bg-[#0D50FF]',
       textColor: 'text-[#e0ecff]',
       fontSize: 'text-lg md:text-xl lg:text-2xl',
-      
       fontWeight: 'font-normal',
     },
     {
@@ -100,7 +93,6 @@ export default function Component() {
       bgColor: 'bg-[#0D50FF]',
       textColor: 'text-[#e0ecff]',
       fontSize: 'text-lg md:text-xl lg:text-2xl',
-      
       fontWeight: 'font-normal',
     },
     {
@@ -112,7 +104,6 @@ export default function Component() {
       bgColor: 'bg-[#0D50FF]',
       textColor: 'text-[#C9CDD9]',
       fontSize: 'text-lg md:text-xl lg:text-2xl',
-      
       fontWeight: 'font-normal',
     },
     {
@@ -185,12 +176,12 @@ export default function Component() {
           {screens[currentScreen].image ? (
             <div className="flex justify-center items-center h-full">
               <Image
-      src={company} // No need to use era.src
-      alt="Custom footer image"
-      width={500} // Set the desired width
-      height={500} // Set the desired height
-      className="w-500 h-500"
-    />
+                src={company} // Ensure your image is properly imported
+                alt="Custom footer image"
+                width={500} // Set the desired width
+                height={500} // Set the desired height
+                className="w-500 h-500"
+              />
             </div>
           ) : (
             <div className={`${screens[currentScreen].fontSize} ${screens[currentScreen].textColor} ${screens[currentScreen].fontWeight} leading-relaxed`}>
@@ -219,8 +210,6 @@ export default function Component() {
           )}
         </div>
       </main>
-
-      
     </div>
   );
 }

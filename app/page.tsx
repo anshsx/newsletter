@@ -5,6 +5,7 @@ import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import era from '../era.png';
 import Image from 'next/image';
+import company from '../company.png';
 // Import CSS for fonts and global styles
 import '../app/globals.css';
 
@@ -185,11 +186,13 @@ export default function Component() {
           )}
           {screens[currentScreen].image ? (
             <div className="flex justify-center items-center h-full">
-              <img
-                src="/placeholder.svg?height=300&width=300"
-                alt="Placeholder image"
-                className="max-w-full max-h-full"
-              />
+              <Image
+      src={company} // No need to use era.src
+      alt="Custom footer image"
+      width={300} // Set the desired width
+      height={300} // Set the desired height
+      className="w-10 h-10"
+    />
             </div>
           ) : (
             <div className={`${screens[currentScreen].fontSize} ${screens[currentScreen].textColor} ${screens[currentScreen].fontWeight} leading-relaxed`}>

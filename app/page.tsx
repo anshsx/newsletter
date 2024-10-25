@@ -214,7 +214,7 @@ export default function Component() {
               alt="Custom footer image"
               className="w-10 h-10"
             />
-            <span>Get Era  -></span>
+            <span>Get Era  -&gt;</span>
           </button>
         </footer>
       )}

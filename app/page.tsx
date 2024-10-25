@@ -2,9 +2,9 @@
 
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import Link from 'next/link'
-import era from '../era.png'
-
+import Link from 'next/link';
+import era from '../era.png';
+import Image from 'next/image';
 // Import CSS for fonts and global styles
 import '../app/globals.css';
 
@@ -223,11 +223,13 @@ export default function Component() {
       {screens[currentScreen].showFooter && (
         <footer className="flex flex-col items-center pb-12">
           <button className="flex items-center justify-center space-x-2 px-4 py-2.5 bg-[#404450] text-[#C9CDD9] rounded-lg border border-gray-300">
-            <img
-  src={era}
-  alt="Custom footer image"
-  className="w-10 h-10"
-/>
+            <Image
+      src={era} // No need to use era.src
+      alt="Custom footer image"
+      width={200} // Set the desired width
+      height={50} // Set the desired height
+      className="w-10 h-10"
+    />
             <span>Get Era -&gt;</span>
           </button>
         </footer>

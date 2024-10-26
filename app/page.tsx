@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from 'react';
-import { Menu, X, ArrowRight } from 'lucide-react';
-import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
+import { Button } from "@/components/ui/button"
 import company from '../company.png';
 import companyblu from '../companyblu.png';
 // Import CSS for fonts and global styles

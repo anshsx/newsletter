@@ -63,7 +63,7 @@ export default function Component() {
     {
       text: (
         <>
-          That&apos;s why we&apos;re developing a new browser, <span className="bg-[#4C7DF6] text-white px-1 py-1 rounded hover:bg-blue-500 transition-colors cursor-pointer underline">which we call Era</span>, as we believe browsers can greatly enhance our online experience. We’re designing ( actually not lying design is inspired by the Browser Company ) ,Era to think as fast as we do, lighten our workload, and boost our creativity. It’s tailored for how we engage with the internet in 2025 and lays the groundwork for our future interactions.
+          That&apos;s why we&apos;re developing a new browser, <Link href="https://era-web-bice.vercel.app/ passHref> <span className="bg-[#4C7DF6] text-white px-1 py-1 rounded hover:bg-blue-500 transition-colors cursor-pointer underline">which we call Era</span> </Link>, as we believe browsers can greatly enhance our online experience. We’re designing ( actually not lying design is inspired by the Browser Company ) ,Era to think as fast as we do, lighten our workload, and boost our creativity. It’s tailored for how we engage with the internet in 2025 and lays the groundwork for our future interactions.
         </>
       ),
       bgColor: 'bg-[#0D50FF]',
@@ -75,7 +75,7 @@ export default function Component() {
       title: "Our Team",
       text: (
         <>
-          I&apos;m Ansh Sharma, the solo 17-year-old developer behind this app. As the founder and CEO, I&apos;m dedicated to building a better browsing experience.<span className="bg-[#4C7DF6] text-white px-1 py-1 rounded hover:bg-blue-500 transition-colors cursor-pointer underline">Join me →</span>
+          I&apos;m Ansh Sharma, the solo 17-year-old developer behind this app. As the founder and CEO, I&apos;m dedicated to building a better browsing experience.<Link href="mailto:erasearch.co@gmail.com?subject=Business%20Related%20Query" passHref> <span className="bg-[#4C7DF6] text-white px-1 py-1 rounded hover:bg-blue-500 transition-colors cursor-pointer underline">Join me →</span> </Link>
         </>
       ),
       bgColor: 'bg-[#0D50FF]',
@@ -87,7 +87,7 @@ export default function Component() {
       title: "Support",
       text: (
         <>
-          Beyond my journey, I&apos;m grateful for the unwavering support of my family and friends, especially my father, Dewarka Nath. If you&apos;re interested in supporting my efforts, I&apos;d love to hear from you! <span className="bg-[#4C7DF6] text-white px-1 py-1 rounded hover:bg-blue-500 transition-colors cursor-pointer underline">support us →</span>.
+          Beyond my journey, I&apos;m grateful for the unwavering support of my family and friends, especially my father, Dewarka Nath. If you&apos;re interested in supporting my efforts, I&apos;d love to hear from you! <Link href="https://buymeacoffee.com/ansh_sx/" passHref > <span className="bg-[#4C7DF6] text-white px-1 py-1 rounded hover:bg-blue-500 transition-colors cursor-pointer underline">support us →</span> </Link>.
         </>
       ),
       bgColor: 'bg-[#0D50FF]',
@@ -114,7 +114,7 @@ export default function Component() {
     {
       text: (
         <>
-          <Link href="/privacy" className="block underline mb-2">Privacy Policy</Link>
+          <Link href="https://era-nine.vercel.app/policy.html" className="block underline mb-2">Privacy Policy</Link>
           <Link href="/security" className="block underline mb-2">Security</Link>
           <span className="block">Hi there :)</span>
         </>

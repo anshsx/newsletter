@@ -87,7 +87,7 @@ export default function Component() {
       title: "Support",
       text: (
         <>
-          Beyond my journey, I&apos;m grateful for the unwavering support of my family and friends, especially my father, Dewarka Nath. If you&apos;re interested in supporting my efforts, I&apos;d love to hear from you! <span className="bg-[#4C7DF6] text-white px-1 py-1 rounded hover:bg-blue-500 transition-colors cursor-pointer underline">support us -></span>.
+          Beyond my journey, I&apos;m grateful for the unwavering support of my family and friends, especially my father, Dewarka Nath. If you&apos;re interested in supporting my efforts, I&apos;d love to hear from you! <span className="bg-[#4C7DF6] text-white px-1 py-1 rounded hover:bg-blue-500 transition-colors cursor-pointer underline">support us →</span>.
         </>
       ),
       bgColor: 'bg-[#0D50FF]',

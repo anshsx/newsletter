@@ -16,9 +16,9 @@ export default function Component() {
     {
       text: (
         <>
-          <span className="block">Could a browser keep us</span>
-          <span className="block">focused, organized, and</span>
-          <span className="block">in control?</span>
+          <span className="block">Discover an era where</span>
+          <span className="block">privacy meets</span>
+          <span className="block">efficiency</span>
         </>
       ),
       bgColor: 'bg-[#131315]',
@@ -31,7 +31,7 @@ export default function Component() {
     {
       text: (
         <>
-          At <span className="bg-[#4C7DF6] text-white px-1 py-1 rounded hover:bg-blue-500 transition-colors cursor-pointer">the Era Inc,</span> we&apos;re building a better way to use the internet.
+          At <span className="bg-[#4C7DF6] text-white px-1 py-1 rounded hover:bg-blue-500 transition-colors cursor-pointer">the Era Inc,</span> we&apos;re reinventing your internet experience.
         </>
       ),
       bgColor: 'bg-[#0D50FF]',
@@ -40,21 +40,21 @@ export default function Component() {
       fontWeight: 'font-semibold',
     },
     {
-      text: "When we think about browsing the internet, we often ignore the browser itself. Instead, we think about all the things we do online—the articles we read, the emails we send, the shows we watch. The software that enables it all, the browser, is so ubiquitous that it's ignored.",
+      text: "When we think about navigating the internet, the browser often gets overshadowed. Our minds drift to what we do online—the articles we read, the emails we write, the shows we binge. The browser, the tool that powers it all, is so familiar that it often slips from our awareness.",
       bgColor: 'bg-[#0D50FF]',
       textColor: 'text-[#e0ecff]',
       fontSize: 'text-lg md:text-xl lg:text-2xl',
       fontWeight: 'font-normal',
     },
     {
-      text: "Despite the ways our internet use has evolved, the browser has remained relatively unchanged. While all of our other software tools are changing for the better—with more collaborative features, flexible interfaces, and powerful functionality—the browser largely still does what it did twenty-five years ago.",
+      text: "Even as our internet habits have transformed, the browser has stayed surprisingly static. Other software tools have evolved for the better, offering enhanced collaboration, adaptable interfaces, and robust features. Meanwhile, the browser continues to perform much like it did a quarter-century ago.",
       bgColor: 'bg-[#0D50FF]',
       textColor: 'text-[#e0ecff]',
       fontSize: 'text-lg md:text-xl lg:text-2xl',
       fontWeight: 'font-normal',
     },
     {
-      text: "What's more, we blame ourselves for the browser's shortcomings. When our browser has an overwhelming number of tabs, we call ourselves inefficient; when we get distracted online, we tell ourselves we need more discipline; when we can't find a URL, we think we're disorganized. Why does the browser get a free pass?",
+      text: "Moreover, we often turn the blame on ourselves for the browser’s limitations. When we have too many tabs open, we label ourselves as inefficient; when we get sidetracked online, we think we lack discipline; when we can’t locate a URL, we believe we’re disorganized. So why does the browser escape scrutiny?",
       bgColor: 'bg-[#0D50FF]',
       textColor: 'text-[#e0ecff]',
       fontSize: 'text-lg md:text-xl lg:text-2xl',
@@ -63,7 +63,7 @@ export default function Component() {
     {
       text: (
         <>
-          That&apos;s why we&apos;re building a new browser, <span className="bg-[#4C7DF6] text-white px-1 py-1 rounded hover:bg-blue-500 transition-colors cursor-pointer underline">which we call Arc</span>, because we believe browsers can do so much more to empower us. We&apos;re imagining a browser that can think as quickly as we do, take work off of our plates, and pull our creativity forward. A browser equipped for the way we use the internet in 2024, and foundational for how we hope to use it in the future.
+          That&apos;s why we&apos;re developing a new browser, <span className="bg-[#4C7DF6] text-white px-1 py-1 rounded hover:bg-blue-500 transition-colors cursor-pointer underline">which we call Era</span>, as we believe browsers can greatly enhance our online experience. We’re designing ( actually not lying design is inspired by the Browser Company ) ,Era to think as fast as we do, lighten our workload, and boost our creativity. It’s tailored for how we engage with the internet in 2025 and lays the groundwork for our future interactions.
         </>
       ),
       bgColor: 'bg-[#0D50FF]',
@@ -75,7 +75,7 @@ export default function Component() {
       title: "Our Team",
       text: (
         <>
-          We&apos;re a team of founders who sold their last company, ex-Instagram engineers, former Heads of Design at Tesla and Medium, multiple Google Chrome alums, alumni from Snap, Slack, and Pinterest, and so many other people who have done it before. <span className="bg-[#4C7DF6] text-white px-1 py-1 rounded hover:bg-blue-500 transition-colors cursor-pointer underline">Work with us →</span>
+          I&apos;m Ansh Sharma, the solo 17-year-old developer behind this app. As the founder and CEO, I&apos;m dedicated to building a better browsing experience.<span className="bg-[#4C7DF6] text-white px-1 py-1 rounded hover:bg-blue-500 transition-colors cursor-pointer underline">Join me →</span>
         </>
       ),
       bgColor: 'bg-[#0D50FF]',
@@ -87,7 +87,7 @@ export default function Component() {
       title: "Support",
       text: (
         <>
-          Beyond our team, we&apos;re lucky to be supported by our family and friends, as well as investors who played a role in some of our favorite software companies over the years. We&apos;ve raised over $17 million dollars from a diverse group that includes the founders of Instagram, Stripe, Twitter, Zoom, Figma, and LinkedIn. We&apos;re always grateful for new perspectives and shared learnings from experience. If you&apos;d like to lend a hand, <span className="bg-[#4C7DF6] text-white px-1 py-1 rounded hover:bg-blue-500 transition-colors cursor-pointer underline">please send us a note</span>.
+          Beyond my journey, I&apos;m grateful for the unwavering support of my family and friends, especially my father, Dewarka Nath. If you&apos;re interested in supporting my efforts, I&apos;d love to hear from you! <span className="bg-[#4C7DF6] text-white px-1 py-1 rounded hover:bg-blue-500 transition-colors cursor-pointer underline">support us -></span>.
         </>
       ),
       bgColor: 'bg-[#0D50FF]',
@@ -102,7 +102,7 @@ export default function Component() {
         </>
       ),
       bgColor: 'bg-[#0D50FF]',
-      textColor: 'text-[#C9CDD9]',
+      textColor: 'text-[#e0ecff]',
       fontSize: 'text-lg md:text-xl lg:text-2xl',
       fontWeight: 'font-normal',
     },

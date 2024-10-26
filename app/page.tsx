@@ -63,7 +63,7 @@ export default function Component() {
     {
       text: (
         <>
-          That&apos;s why we&apos;re developing a new browser, <Link href="https://era-web-bice.vercel.app/ passHref> <span className="bg-[#4C7DF6] text-white px-1 py-1 rounded hover:bg-blue-500 transition-colors cursor-pointer underline">which we call Era</span> </Link>, as we believe browsers can greatly enhance our online experience. We’re designing ( actually not lying design is inspired by the Browser Company ) ,Era to think as fast as we do, lighten our workload, and boost our creativity. It’s tailored for how we engage with the internet in 2025 and lays the groundwork for our future interactions.
+          That&apos;s why we&apos;re developing a new browser, <Link href="https://era-web-bice.vercel.app/" passHref> <span className="bg-[#4C7DF6] text-white px-1 py-1 rounded hover:bg-blue-500 transition-colors cursor-pointer underline">which we call Era</span> </Link>, as we believe browsers can greatly enhance our online experience. We’re designing ( actually not lying design is inspired by the Browser Company ) ,Era to think as fast as we do, lighten our workload, and boost our creativity. It’s tailored for how we engage with the internet in 2025 and lays the groundwork for our future interactions.
         </>
       ),
       bgColor: 'bg-[#0D50FF]',

@@ -8,9 +8,15 @@ import companyblu from '../companyblu.png';
 // Import CSS for fonts and global styles
 import '../app/globals.css';
 
+// Define the props for the CustomButton component
+interface CustomButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  children: React.ReactNode; // Define the type for children
+  className?: string; // Optional className prop
+}
+
 // Custom Button Component
-const CustomButton = ({ children, className = '', ...props }) => {
-  const baseStyles = 'bg-[#0D50FF] hover:bg-[#0D50FF]/90 text-white font-bold py-2 px-6 rounded-md'
+const CustomButton: React.FC<CustomButtonProps> = ({ children, className = '', ...props }) => {
+  const baseStyles = 'bg-[#0D50FF] hover:bg-[#0D50FF]/90 text-white font-bold py-2 px-6 rounded-md';
   return (
     <button
       className={`${baseStyles} ${className}`}
@@ -18,30 +24,30 @@ const CustomButton = ({ children, className = '', ...props }) => {
     >
       {children}
     </button>
-  )
-}
+  );
+};
 
 export default function CustomGoogleForm() {
-  const [email, setEmail] = useState('')
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [email, setEmail] = useState<string>(''); // Specify the type for email
+  const [isSubmitted, setIsSubmitted] = useState<boolean>(false); // Specify the type for isSubmitted
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    const encodedEmail = encodeURIComponent(email)
-    const baseURL = 'https://docs.google.com/forms/d/e/1FAIpQLScQy5p73shOqgbtfG_JGZNQ54Gfu_zED0aUk-_TNPmTYGzu-Q/formResponse?'
-    const submitURL = `${baseURL}entry.126757335=${encodedEmail}&submit=Submit`
+    e.preventDefault();
+    const encodedEmail = encodeURIComponent(email);
+    const baseURL = 'https://docs.google.com/forms/d/e/1FAIpQLScQy5p73shOqgbtfG_JGZNQ54Gfu_zED0aUk-_TNPmTYGzu-Q/formResponse?';
+    const submitURL = `${baseURL}entry.126757335=${encodedEmail}&submit=Submit`;
 
     fetch(submitURL, {
       method: 'POST',
       mode: 'no-cors',
     }).then(() => {
-      setIsSubmitted(true)
-    })
-  }
+      setIsSubmitted(true);
+    });
+  };
 
   const handleGetEra = () => {
-    window.location.href = 'https://play.google.com/store/apps/details?id=com.erainc.era'
-  }
+    window.location.href = 'https://play.google.com/store/apps/details?id=com.erainc.era';
+  };
 
   if (isSubmitted) {
     return (
@@ -49,18 +55,18 @@ export default function CustomGoogleForm() {
         <div className="bg-white p-8 rounded-lg text-center max-w-md w-full">
           <div className="mb-6 relative inline-block">
             <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-white shadow-lg">
-              <Image 
+              <Image
                 src={companyblu}
-                alt="Thank You" 
-                width={96} 
-                height={96} 
+                alt="Thank You"
+                width={96}
+                height={96}
                 className="object-cover"
               />
             </div>
           </div>
           <h2 className="text-2xl font-bold mb-4">Thank you!</h2>
           <p className="text-gray-600 mb-6">We appreciate you and all that.</p>
-          <CustomButton 
+          <CustomButton
             onClick={handleGetEra}
             className="inline-flex items-center"
           >
@@ -69,7 +75,7 @@ export default function CustomGoogleForm() {
           </CustomButton>
         </div>
       </div>
-    )
+    );
   }
 
   return (
@@ -103,5 +109,5 @@ export default function CustomGoogleForm() {
         </form>
       </div>
     </div>
-  )
+  );
 }

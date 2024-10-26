@@ -8,7 +8,6 @@ import company from '../company.png';
 import companyblu from '../companyblu.png';
 // Import CSS for fonts and global styles
 import '../app/globals.css'
-import { Button } from "@/components/ui/button"
 
 export default function CustomGoogleForm() {
   const [email, setEmail] = useState('')

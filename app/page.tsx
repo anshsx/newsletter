@@ -65,7 +65,7 @@ export default function CustomGoogleForm() {
             </div>
           </div>
           <h2 className="text-2xl font-bold mb-4">Thank you!</h2>
-          <p className="text-gray-600 mb-6">We appreciate you and all that.</p>
+          <p className="text-gray-600 mb-6">Thank you for subscribing to the Era Inc newsletter—welcome to our community! We&apos;ll keep you updated with all the latest news and updates via email.</p>
           <CustomButton
             onClick={handleGetEra}
             className="inline-flex items-center"
